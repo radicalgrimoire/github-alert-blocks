@@ -29,7 +29,6 @@ function convertGithubAlert(blockquote) {
   const title = document.createElement("p");
 
   alert.className = `github-alert github-alert-${type.toLowerCase()}`;
-  alert.setAttribute("role", "alert");
 
   title.className = "github-alert-title";
   title.textContent = githubAlertTypes[type];
