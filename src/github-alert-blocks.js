@@ -6,7 +6,7 @@ const githubAlertTypes = {
   CAUTION: "Caution"
 };
 
-const alertPattern = /^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\][ \t]*(?=\r?\n|$)/;
+const alertPattern = /^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\][ \t]*(?=\r?\n|$)/i;
 
 function replaceAlertMarker(paragraph, marker) {
   for (const node of paragraph.childNodes) {
@@ -18,13 +18,15 @@ function replaceAlertMarker(paragraph, marker) {
 }
 
 function convertGithubAlert(blockquote) {
+  if (blockquote.parentElement.closest("blockquote")) return;
+
   const paragraph = blockquote.firstElementChild;
   if (paragraph?.tagName !== "P") return;
 
   const match = paragraph.textContent.match(alertPattern);
   if (!match) return;
 
-  const type = match[1];
+  const type = match[1].toUpperCase();
   const alert = document.createElement("div");
   const title = document.createElement("p");
 
