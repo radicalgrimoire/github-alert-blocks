@@ -6,7 +6,7 @@ const githubAlertTypes = {
   CAUTION: "Caution"
 };
 
-const alertPattern = /^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*/;
+const alertPattern = /^\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\][ \t]*(?=\r?\n|$)/;
 
 function replaceAlertMarker(paragraph, marker) {
   for (const node of paragraph.childNodes) {
