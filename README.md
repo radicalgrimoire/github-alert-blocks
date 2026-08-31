@@ -56,7 +56,7 @@ A Markdown renderer normally produces this HTML:
 After the script runs, it becomes:
 
 ```html
-<div class="github-alert github-alert-note" role="alert">
+<div class="github-alert github-alert-note">
   <p class="github-alert-title">Note</p>
   <p>Useful context.</p>
 </div>
