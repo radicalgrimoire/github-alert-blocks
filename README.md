@@ -2,6 +2,8 @@
 
 Render GitHub-style Markdown alert blocks on any site that turns Markdown blockquotes into HTML.
 
+[Live demo](https://radicalgrimoire.github.io/docs/test/github-alert-blocks/)
+
 ## Supported syntax
 
 ```md
